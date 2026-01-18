@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Web Designer & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* スムーススクロール */
+        html { scroll-behavior: smooth; }
+        
+        /* ふわっと表示されるアニメーション用クラス */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* 背景の幾何学模様（CSSのみで描画） */
+        .hero-bg {
+            background-color: #ffffff;
+            background-image: radial-gradient(#1e3a8a 0.5px, transparent 0.5px), radial-gradient(#1e3a8a 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05; /* うっすらと表示 */
+        }
+    </style>
+</head>
+<body class="text-slate-700 font-sans antialiased bg-slate-50">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-blue-900 tracking-wide">My Portfolio</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-800 transition">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-600 hover:text-blue-800 transition">Skills</a>
+                    <a href="#works" class="text-sm font-medium text-slate-600 hover:text-blue-800 transition">Works</a>
+                    <a href="#contact" class="px-4 py-2 text-sm font-medium text-white bg-blue-900 rounded-full hover:bg-blue-800 transition shadow-md">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 hero-bg z-0"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center fade-in-section">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-800 text-sm font-semibold mb-6">
+                Web Designer & Developer
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                確かな技術で、<br class="hidden md:inline">あなたのビジョンを形に。
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                ビジネスの課題を解決する、洗練されたWebサイトを制作します。<br>
+                丁寧なヒアリングと確実な実装で、安心のパートナーシップを。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#works" class="px-8 py-4 bg-blue-900 text-white font-bold rounded-lg shadow-lg hover:bg-blue-800 hover:shadow-xl transition transform hover:-translate-y-1">
+                    実績を見る
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white text-blue-900 border border-slate-200 font-bold rounded-lg shadow-sm hover:bg-slate-50 transition">
+                    ご相談・お見積り
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section">
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-100 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-300">
+                            <i class="fas fa-user text-6xl"></i>
+                        </div>
+                        </div>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-bold text-blue-800 uppercase tracking-widest mb-2">About Me</h2>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-6">ビジネスの成長を支える<br>Webパートナー</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        はじめまして。Webデザイナー兼エンジニアとして活動しております。<br>
+                        美しいだけでなく「機能する」デザインと、保守性の高いコード記述を心がけています。<br>
+                        AI技術を積極的に活用し、高品質かつスピーディーな納品を実現します。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-800 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-800">迅速なレスポンス</h4>
+                                <p class="text-slate-500 text-sm">原則12時間以内に返信いたします。スムーズな進行をお約束します。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-800 mt-1">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-800">丁寧なヒアリング</h4>
+                                <p class="text-slate-500 text-sm">専門用語を使わず、お客様の意図を汲み取った提案を行います。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-blue-800 uppercase tracking-widest mb-2">Skills</h2>
+                <h3 class="text-3xl font-bold text-slate-900">提供できる技術</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-blue-900">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6">
+                        <i class="fas fa-code text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">コーディング</h4>
+                    <p class="text-slate-500 text-sm mb-4">SEOを意識したセマンティックなマークアップと、メンテナンス性の高いCSS設計。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">HTML5</span>
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">CSS3/Tailwind</span>
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-blue-900">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                        <i class="fas fa-robot text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">AI活用・高速開発</h4>
+                    <p class="text-slate-500 text-sm mb-4">Gemini/ChatGPT等の生成AIを開発プロセスに組み込み、高品質な成果物を短納期で提供。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">Prompt Engineering</span>
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">AI Coding</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-blue-900">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-6">
+                        <i class="fas fa-server text-xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">バックエンド基礎</h4>
+                    <p class="text-slate-500 text-sm mb-4">プログラミングの基礎知識を有しており、システム側の要件もスムーズに理解可能です。</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">C言語</span>
+                        <span class="px-2 py-1 bg-slate-100 text-xs rounded text-slate-600">Server Basics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-blue-800 uppercase tracking-widest mb-2">Works</h2>
+                <h3 class="text-3xl font-bold text-slate-900">制作実績</h3>
+                <p class="mt-4 text-slate-500">これまでに手掛けたプロジェクトの一部をご紹介します。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group-hover:opacity-90 transition">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
+                            <i class="fas fa-laptop text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-800 bg-blue-50 px-2 py-1 rounded mb-2 inline-block">Web制作</span>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-800 transition">コーポレートサイト制作</h4>
+                        <p class="text-slate-500 text-sm mb-4">企業の信頼感を高めるデザインと、CMS導入による更新のしやすさを両立。</p>
+                        <a href="#" class="text-sm font-bold text-blue-800 hover:underline">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group-hover:opacity-90 transition">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
+                            <i class="fas fa-rocket text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-800 bg-blue-50 px-2 py-1 rounded mb-2 inline-block">LP制作</span>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-800 transition">商品販促ランディングページ</h4>
+                        <p class="text-slate-500 text-sm mb-4">購買心理に基づいた構成と、マイクロインタラクションによるCVR向上施策。</p>
+                        <a href="#" class="text-sm font-bold text-blue-800 hover:underline">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden group-hover:opacity-90 transition">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
+                            <i class="fas fa-layer-group text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-800 bg-blue-50 px-2 py-1 rounded mb-2 inline-block">デザイン</span>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-800 transition">このポートフォリオサイト</h4>
+                        <p class="text-slate-500 text-sm mb-4">Geminiを活用し、構想から実装までを短時間で実現。Tailwind CSS使用。</p>
+                        <a href="#" class="text-sm font-bold text-blue-800 hover:underline">View Details →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-2xl mx-auto px-4 fade-in-section">
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
+                <div class="text-center mb-10">
+                    <h2 class="text-sm font-bold text-blue-800 uppercase tracking-widest mb-2">Contact</h2>
+                    <h3 class="text-3xl font-bold text-slate-900">お問い合わせ</h3>
+                    <p class="mt-4 text-slate-500">
+                        お仕事のご相談、お見積もりなど、お気軽にお問い合わせください。<br>
+                        内容を確認後、12時間以内にご返信いたします。
+                    </p>
+                </div>
+                
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('これはデモ画面です。実際には送信されません。');">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">お名前</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition" placeholder="山田 太郎">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">メールアドレス</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition" placeholder="example@email.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700 mb-1">お問い合わせ内容</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none transition" placeholder="ご相談内容をご記入ください"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-blue-900 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 hover:shadow-lg transition transform hover:-translate-y-1">
+                        送信する
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">© 2026 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // 一度表示したら監視を終了
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
